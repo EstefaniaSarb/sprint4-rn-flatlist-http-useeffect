@@ -25,7 +25,7 @@ _Escribe tus respuestas debajo de cada pregunta._
 ## Paso 3 · Estado
 
 **¿Por qué guardo los personajes en estado y no en una variable normal?**
-
+*Usando estados al cambiar y utilizar set, se le avisa a React que debe volver a renderizar la pantalla con datos nuevos, y una variable normal no hace eso. Además, el estado se conserva entre renders, mientras que una variable normal se reinicia cada vez que el componente se ejecuta.*
 > 
 
 ## Paso 4 · useEffect

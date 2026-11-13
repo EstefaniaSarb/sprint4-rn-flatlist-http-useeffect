@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { COLORS } from '../config/constants';
+import { useState } from 'react';
+import { getCharacters } from '../services/charactersService';
 
 // ✍️ LO PROGRAMAS TÚ (Pasos 3 al 10)
 //
@@ -11,9 +13,14 @@ import { COLORS } from '../config/constants';
 
 // TODO Paso 3: importa de 'react' lo que necesites y trae getCharacters del servicio.
 // TODO Paso 5: importa lo que falte de 'react-native' y el componente CharacterCard.
-
+const personajes=[];
 export default function CharactersScreen() {
   // TODO Paso 3: declara los estados (personajes, carga, error).
+
+  const [characters, setCharacters]= useState([]);
+  const [loading, setLoading]=useState(true);
+  const [error, serError]=useState();
+  
   // TODO Paso 4: primera carga de datos con useEffect.
   // TODO Paso 6: estados de carga / error y reintento.
   // TODO Paso 8: paginación (estado extra + función para cargar más).
