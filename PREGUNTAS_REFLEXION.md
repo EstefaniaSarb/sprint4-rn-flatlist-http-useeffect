@@ -56,7 +56,7 @@ _Escribe tus respuestas debajo de cada pregunta._
 
 **¿Por qué es mejor mostrar un mensaje con un botón "Reintentar" que dejar la pantalla vacía?**
 
-> 
+> *Pqra que el usuario sepa que es lo que está pasando y no se fruste al no saber si falló, si sigue cargando o no hay datos*
 
 ## Paso 8 · Paginación
 

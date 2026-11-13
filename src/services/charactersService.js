@@ -13,6 +13,7 @@ import { API_BASE_URL } from '../config/constants';
 //
 // Lee las reglas completas en la GUIA_ALUMNO.md, Paso 2.
 
+
 export async function getCharacters({ page = 1, name = '' } = {}) {
   // TODO Paso 2: implementa la petición HTTP y devuelve el objeto del contrato.
   const search= name.trim();

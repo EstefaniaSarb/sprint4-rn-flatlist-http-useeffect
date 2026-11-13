@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
 import { COLORS } from '../config/constants';
 import { useState, useEffect } from 'react';
 import { getCharacters } from '../services/charactersService';
 import CharacterCard from '../components/CharacterCard';
+import StateMessage from '../components/StateMessage';
 
 // ✍️ LO PROGRAMAS TÚ (Pasos 3 al 10)
 //
@@ -21,12 +22,14 @@ export default function CharactersScreen() {
   const [characters, setCharacters]= useState([]);
   const [loading, setLoading]=useState(true);
   const [error, setError]=useState(null);
-
+  const [reloadKey, setReloadKey] = useState(0);
 
   // TODO Paso 4: primera carga de datos con useEffect.
 
   useEffect(()=>{
     async function loadFirstPage(){
+      setLoading(true); 
+      setError(null);
       try{
         const data=await getCharacters({page:1});
         setCharacters(data.results);
@@ -40,11 +43,28 @@ export default function CharactersScreen() {
       }
     }
     loadFirstPage();
-  }, []);
+  }, [reloadKey]);
   // TODO Paso 6: estados de carga / error y reintento.
   // TODO Paso 8: paginación (estado extra + función para cargar más).
   // TODO Paso 9: pull to refresh.
   // TODO Paso 10: búsqueda con debounce.
+
+  const handleRetry = () => setReloadKey((prev) => prev + 1);
+  let content;
+  if (loading) {
+    content = <ActivityIndicator size="large" color={COLORS.primary} style={styles.loader} />;
+  } else if (error && characters.length === 0) {
+    content = <StateMessage message={error} actionLabel="Reintentar" onAction={handleRetry} />;
+  } else {
+    content = (
+      <FlatList
+        data={characters}
+        keyExtractor={(item) => String(item.id)}
+        renderItem={({ item }) => <CharacterCard character={item} />}
+        contentContainerStyle={styles.listContent}
+      />
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -53,13 +73,7 @@ export default function CharactersScreen() {
       {/* TODO Paso 10: aquí va el campo de búsqueda. */}
 
       {/* TODO Paso 5: sustituye este texto por tu FlatList. */}
-      <FlatList
-        data={characters}
-        keyExtractor={(item) => String(item.id)}
-        renderItem={({ item }) => <CharacterCard character={item} />}
-        contentContainerStyle={styles.listContent}
-      />
-
+      {content}
     </View>
   );
 }
