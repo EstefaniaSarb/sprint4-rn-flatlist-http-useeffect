@@ -1,10 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 import CharactersScreen from './src/screens/CharactersScreen';
 import { COLORS } from './src/config/constants';
 
-// ✅ YA VIENE HECHO: no necesitas modificar este archivo.
 export default function App() {
   return (
     <SafeAreaProvider>
