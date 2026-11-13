@@ -32,15 +32,15 @@ _Escribe tus respuestas debajo de cada pregunta._
 
 1. **¿Qué pasa si omito por completo el arreglo de dependencias?**
 
-> 
+> *se crearia un ciclo infinito donde el efecto se ejecuta después de cada render, y como el efecto cambia el estado, eso provoca un nuevo render que vuelve a ejecutar el efecto*
 
 2. **¿Qué significa dejar el arreglo vacío?**
 
-> 
+> *Significa que solo se ejecutara una vez, cuando la pantalla aparece* 
 
 3. **¿Por qué la función que recibe `useEffect` no debe ser `async` directamente?**
 
-> 
+> *Porque una función async siempre devuelve una promesa, y React espera que la función del efecto devuelva undefined o una función de limpieza*
 
 ## Paso 5 · FlatList
 
