@@ -10,7 +10,7 @@ _Escribe tus respuestas debajo de cada pregunta._
 
 | Pregunta | Mi respuesta |
 |---|---|
-| ¿Cuántos personajes trae cada página? | *20 personajes* |
+| ¿Cuántos personajes trae cada página? | **20 personajes* |
 | ¿Qué campo me dice si existe una página siguiente? | *info.next* |
 | ¿Qué valor tiene ese campo en la última página? | *null* |
 | ¿Qué código HTTP devuelve una búsqueda sin resultados? | *código 404 "error": "There is nothing here"* |
@@ -19,7 +19,7 @@ _Escribe tus respuestas debajo de cada pregunta._
 ## Paso 2 · Petición HTTP
 
 **¿Qué diferencia hay entre que `fetch` "falle" y que el servidor responda con un error? ¿Qué debo revisar en la respuesta?**
-
+*Cuando el `fetch` falla es porque hubo algun problema por lo cual no se logra completar la petición, si el servidor responde con un error si logró terminar la petición pero hay problemas con los datos de la API*
 > 
 
 ## Paso 3 · Estado
