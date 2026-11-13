@@ -46,11 +46,11 @@ _Escribe tus respuestas debajo de cada pregunta._
 
 1. **¿Para qué sirve la prop que extrae la llave de cada elemento?**
 
-> 
+> *Sirve para que cada elemento de la lista tenga un identificador*
 
 2. **¿Por qué usar `FlatList` en lugar de un `ScrollView` con `.map()`?**
 
-> 
+> *porque renderiza solo los elementos visibles lo cual mejora el rendimiento*
 
 ## Paso 6 · Carga y error
 
